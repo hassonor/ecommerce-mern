@@ -1,9 +1,6 @@
-import express from 'express';
-import seedRouter from "./seedRoutes";
-import Product from "../models/productModel";
-import data from "../data";
-
-
+require('../dal/dal');
+const express = require('express');
+const Product = require('../models/productModel');
 const productRouter = express.Router();
 
 productRouter.get('/', async (req, res) => {
@@ -30,5 +27,4 @@ productRouter.get('/:id', async (req, res) => {
     }
 });
 
-
-export default productRouter;
+module.exports = productRouter;

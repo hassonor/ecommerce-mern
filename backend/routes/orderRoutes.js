@@ -1,7 +1,8 @@
-import express from 'express';
-import expressAsyncHandler from 'express-async-handler';
-import Order from '../models/orderModel.js';
-import {isAuth} from '../utils.js';
+require('../dal/dal');
+const express = require('express');
+const expressAsyncHandler = require('express-async-handler');
+const Order = require('../models/orderModel.js');
+const {isAuth} = require('../utils.js');
 
 const orderRouter = express.Router();
 orderRouter.post(
@@ -69,5 +70,4 @@ orderRouter.put(
     })
 );
 
-
-export default orderRouter;
+module.exports = orderRouter;

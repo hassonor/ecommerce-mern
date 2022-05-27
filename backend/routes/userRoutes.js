@@ -1,8 +1,9 @@
-import express from 'express';
-import bcrypt from 'bcryptjs';
-import expressAsyncHandler from 'express-async-handler';
-import User from '../models/userModel.js';
-import {generateToken, isAuth} from '../utils.js';
+require('../dal/dal');
+const express = require('express');
+const bcrypt = require('bcryptjs');
+const expressAsyncHandler = require('express-async-handler');
+const User = require('../models/userModel.js');
+const {generateToken, isAuth} = require('../utils.js');
 
 const userRouter = express.Router();
 
@@ -68,4 +69,4 @@ userRouter.put(
     })
 )
 
-export default userRouter;
+module.exports = userRouter;
