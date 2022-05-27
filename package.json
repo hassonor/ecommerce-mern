@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/hassonor/ecommerce-mern/issues"
   },
-  "homepage": "https://github.com/hassonor/ecommerce-mern#readme"
+  "homepage": "https://github.com/hassonor/ecommerce-mern#readme",
+  "engines": {
+    "node": "14.x"
+  }
 }
