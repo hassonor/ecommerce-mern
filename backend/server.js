@@ -1,4 +1,5 @@
 const morgan = require('morgan') // using require here to prevent warning bug
+import path from 'path';
 import express from 'express';
 import helmet from "helmet";
 import cors from 'cors';
@@ -27,12 +28,15 @@ app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
 
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, 'frontend/build')));
+
+app.use("*", (req, res) =>
+    res.sendFile(path.join(__dirname, 'frontend/build/index.html')));
 
 app.use((err, req, res, next) => {
     res.status(500).send({message: err.message});
 })
-
-app.use("*", (request, response) => response.status(404).send("Route not found."));
 
 const port = process.env.PORT || 6200;
 app.listen(port, () => {

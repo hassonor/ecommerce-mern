@@ -1,0 +1,21 @@
+{
+  "name": "ecommerce-mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd backend && npm install && cd ../frontend && npm install && npm run build",
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hassonor/ecommerce-mern.git"
+  },
+  "author": "Or Hasson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hassonor/ecommerce-mern/issues"
+  },
+  "homepage": "https://github.com/hassonor/ecommerce-mern#readme"
+}
